@@ -56,4 +56,24 @@
 	{% endfor %}
   </tr>
 </table>
+<hr>
+<table border="2">
+	<caption>Summary per year/month</caption>
+	<tr>
+		{% for year_month, total in get_per_year_month_summary.items%}
+		<tr>
+		<td>{{year_month|date:"Y-m"}}</td>
+		<td>{{total|floatformat:2}}</td>
+	</tr>
+	{% endfor %}
+</table>
+<hr>
+<table border="1">
+	<caption>Total amount</caption>
+	<tr>
+		{% for _, total in amount.items %}
+			<td>Total: {{ total|floatformat:2}}</td>
+	</tr>
+	{% endfor %}
+</table>
 {% endblock %}

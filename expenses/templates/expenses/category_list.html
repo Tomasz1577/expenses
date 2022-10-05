@@ -17,7 +17,9 @@
 				{{obj.name}}
 			</td>
 			<td>
+				<!--6.Add update view-->
 				<a href="{% url 'expenses:category-delete' obj.id %}">delete</a>
+				<a href="{% url 'expenses:category-update' obj.id %}">update</a>
 			</td>
 		</tr>
 		{% endfor %}
