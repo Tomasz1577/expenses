@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-from django.db.models import Sum, Value
+from django.db.models import Sum, Value, Count
 from django.db.models.functions import Coalesce, TruncMonth
 
 
@@ -31,3 +31,11 @@ def total_amount(queryset):
     return OrderedDict(
         queryset.aggregate(Sum('amount'))
     )
+
+#7.Add number of expenses per category row in category list
+
+def get_about_categories(queryset):
+    about_categories = queryset \
+        .annotate(count_category=Count('expense')) \
+        .order_by('-count_category')
+    return about_categories

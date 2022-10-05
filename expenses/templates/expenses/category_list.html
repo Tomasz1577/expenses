@@ -7,14 +7,19 @@
 	<thead>
 		<tr>
 			<th>name</th>
+			<th>count_category</th>
 			<th>actions</th>
 		</tr>
 	</thead>
 	<tbody>
-		{% for obj in object_list %}
+	<!--Add number of expenses per category row in category list.-->
+		{% for obj in about_categories %}
 		<tr>
 			<td>
-				{{obj.name}}
+				{{obj}}
+			</td>
+			<td>
+				{{ obj.count_category }}
 			</td>
 			<td>
 				<!--6.Add update view-->
