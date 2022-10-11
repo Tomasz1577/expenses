@@ -1,0 +1,1 @@
+Recruiting tasks using Django.
